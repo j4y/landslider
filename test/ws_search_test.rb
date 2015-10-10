@@ -1,7 +1,7 @@
 
 require 'test_helper'
 
-class WsSearchTest < Test::Unit::TestCase
+class WsSearchTest < Minitest::Test
 
 	def setup
 		# Landslider.logger = $stdout

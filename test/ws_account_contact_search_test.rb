@@ -1,10 +1,10 @@
 
 require 'test_helper'
 
-class WsAccountContactSearchTest < Test::Unit::TestCase
+class WsAccountContactSearchTest < Minitest::Test
 
 	def setup
-		Landslider.logger = $stdout
+		# Landslider.logger = $stdout
 		$sess4 ||= Landslider.login('LOGINTOKEN=' + LS_INSTANCE_NAME)[:session_id]
 	end
 	

@@ -1,7 +1,7 @@
 
 require 'test_helper'
 
-class GetAccountsTest < Test::Unit::TestCase
+class GetAccountsTest < Minitest::Test
 
 	def setup
 		# uncomment this line to debug
@@ -13,7 +13,7 @@ class GetAccountsTest < Test::Unit::TestCase
 	
 		result = Landslider.get_accounts($sesson_id1)
 
-		assert_not_nil result
+		refute_nil result
 		assert_equal false, result[:error]
 		assert_kind_of Array, result[:accounts]
 		
@@ -24,7 +24,7 @@ class GetAccountsTest < Test::Unit::TestCase
 		simple_search = Landslider::WsSearch.new({:first_result_position => 1, :total_results_requested => 1})
 		result = Landslider.get_accounts($sesson_id1, simple_search)
 	
-		assert_not_nil result
+		refute_nil result
 		assert_equal false, result[:error]
 		assert_kind_of Array, result[:accounts]
 		assert_equal 1, result[:accounts].size
@@ -36,7 +36,7 @@ class GetAccountsTest < Test::Unit::TestCase
 		search.search_criteria = Landslider::WsSearchCriterion.new('AccountTypeId', 'Equals', '1539484')
 		result = Landslider.get_accounts($sesson_id1, search)
 
-		assert_not_nil result
+		refute_nil result
 		assert_equal false, result[:error]
 		assert_kind_of Array, result[:accounts]
 		assert_equal 3, result[:accounts].size

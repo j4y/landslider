@@ -1,7 +1,7 @@
 
 require 'test_helper'
 
-class WsLeadNoteSearchTest < Test::Unit::TestCase
+class WsLeadNoteSearchTest < Minitest::Test
 
 	def setup
 		$sid5 ||= Landslider.login('LOGINTOKEN=' + LS_INSTANCE_NAME)[:session_id]

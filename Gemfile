@@ -1,8 +1,9 @@
 source "http://rubygems.org"
 
+gem "minitest"
 gem "curb"
 gem "jeweler"
-gem "handsoap", ">= 1.1.8"
+gem "handsoap"
 
 group :development do
 	gem "yard"

@@ -1,7 +1,7 @@
 
 require 'test_helper'
 
-class RunMylistByIdTest < Test::Unit::TestCase
+class RunMylistByIdTest < Minitest::Test
 
 	# this test depends on data in the jaytest instance
 	JAYTEST_MYLIST_ID = 10293817

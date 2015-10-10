@@ -2,18 +2,18 @@ require 'test_helper'
 
 require 'date'
 
-class GetTasksTest < Test::Unit::TestCase
+class GetTasksTest < Minitest::Test
 
 	def setup
 		# uncomment this line to debug
-		#Landslider.logger = $stdout
+    # Landslider.logger = $stdout
 		$sesson_idt7 ||= Landslider.login('LOGINTOKEN=' + LS_INSTANCE_NAME)[:session_id]
 	end
 	
 	def test_get_tasks_with_default_search
 		search = Landslider::WsTaskSearch.new
 		result = Landslider.get_tasks($sesson_idt7, search)
-		assert_not_nil result
+		refute_nil result
 		assert_equal false, result[:error]
 		assert_kind_of Array, result[:tasks]
 	end
@@ -33,7 +33,7 @@ class GetTasksTest < Test::Unit::TestCase
 		task.task_type_id = task_types_result[:task_types].first[:task_type_id]
 
 		result = Landslider.add_task($sesson_idt7, task)
-		assert_not_nil result
+		refute_nil result
 		assert_equal false, result[:error]
 		assert_equal true, result[:created]
 	end

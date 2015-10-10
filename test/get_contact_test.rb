@@ -1,7 +1,7 @@
 
 require 'test_helper'
 
-class GetContactTest < Test::Unit::TestCase
+class GetContactTest < Minitest::Test
 
 	def setup
 		$ss ||= Landslider.login('LOGINTOKEN=' + LS_INSTANCE_NAME)[:session_id]
