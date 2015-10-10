@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ns2:loginResponse xmlns:ns2="http://www.landslide.com/webservices/SoapService">
+      <loginResponse>
+        <error>false</error>
+        <errorCode>0</errorCode>
+        <resultMsg>login done successfully</resultMsg>
+        <statusCode>0</statusCode>
+        <passwordExpired>false</passwordExpired>
+        <sessionId>A6DD32E80C97FA41934C8081B71C7723</sessionId>
+      </loginResponse>
+    </ns2:loginResponse>
+  </soap:Body>
+</soap:Envelope>

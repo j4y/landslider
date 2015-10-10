@@ -6,6 +6,13 @@ class LandsliderTest < Minitest::Test
 	JAYTEST_ACCOUNT_ID = 55647822
 	
 	def setup
+	  
+	  request_body = "<?xml version='1.0' ?>\n<env:Envelope xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <env:Header>\n    <urn:SessionHeader xmlns:urn=\"http://www.landslide.com/webservices/SoapService\">\n      <urn:sessionId>LOGINTOKEN=jaytest</urn:sessionId>\n    </urn:SessionHeader>\n  </env:Header>\n  <env:Body>\n    <urn:login xmlns:urn=\"http://www.landslide.com/webservices/SoapService\">\n      <wsUser>\n        <username>jayp@landslide.com</username>\n        <password>53308ccbdcb7f23fbd81a0b2ebcf12a4</password>\n      </wsUser>\n    </urn:login>\n  </env:Body>\n</env:Envelope>"
+    stub_request(:post, "https://jaytest.api.landslide.com/webservices/SoapService").
+          with(:body => request_body,
+               :headers => {'Content-Type: text/xml; charset=utf-8'=>'', 'User-Agent: landslider-Ruby-Gem-Version-0.4.6'=>''}).
+          to_return(:body => File.new('response_body.txt'), :status => 200)
+    #Landslider.logger = $stdout
 		$sid ||= Landslider.login('LOGINTOKEN=' + LS_INSTANCE_NAME)[:session_id]
 	end
 

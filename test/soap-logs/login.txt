@@ -1,0 +1,108 @@
+
+===============
+--- Request ---
+POST https://jaytest.api.landslide.com/webservices/SoapService
+---
+Content-Type: text/xml; charset=UTF-8
+---
+<?xml version='1.0' ?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+  <env:Header>
+    <urn:SessionHeader xmlns:urn="http://www.landslide.com/webservices/SoapService">
+      <urn:sessionId>LOGINTOKEN=jaytest</urn:sessionId>
+    </urn:SessionHeader>
+  </env:Header>
+  <env:Body>
+    <urn:login xmlns:urn="http://www.landslide.com/webservices/SoapService">
+      <wsUser>
+        <username>jayp@landslide.com</username>
+        <password>53308ccbdcb7f23fbd81a0b2ebcf12a4</password>
+      </wsUser>
+    </urn:login>
+  </env:Body>
+</env:Envelope>
+--- Response ---
+HTTP Status: 200
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=A6DD32E80C97FA41934C8081B71C7723; Path=/webservices
+Set-Cookie: LSCookie=Zt69pkdGTJX5QFSBqi6Um/rQ2xcm2K73Kv5ffHD/kGZBALPBx7wE+K6IRql7OYod8XjyCRXYSfnQvq+cm08kontK792Hk3Yh; Version=1
+Set-Cookie: LandslideAppCookie=2031124490.36895.0000; path=/
+Content-Type: text/xml;charset=UTF-8
+Transfer-Encoding: chunked
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Date: Sat, 10 Oct 2015 15:46:12 GMT
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ns2:loginResponse xmlns:ns2="http://www.landslide.com/webservices/SoapService">
+      <loginResponse>
+        <error>false</error>
+        <errorCode>0</errorCode>
+        <resultMsg>login done successfully</resultMsg>
+        <statusCode>0</statusCode>
+        <passwordExpired>false</passwordExpired>
+        <sessionId>A6DD32E80C97FA41934C8081B71C7723</sessionId>
+      </loginResponse>
+    </ns2:loginResponse>
+  </soap:Body>
+</soap:Envelope>
+---
+===============
+--- Request ---
+POST https://jaytest.api.landslide.com/webservices/SoapService
+---
+Content-Type: text/xml; charset=UTF-8
+---
+<?xml version='1.0' ?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+  <env:Header>
+    <urn:SessionHeader xmlns:urn="http://www.landslide.com/webservices/SoapService">
+      <urn:sessionId>LOGINTOKEN=jaytest</urn:sessionId>
+    </urn:SessionHeader>
+  </env:Header>
+  <env:Body>
+    <urn:login xmlns:urn="http://www.landslide.com/webservices/SoapService">
+      <wsUser>
+        <username>jayp@landslide.com</username>
+        <password>53308ccbdcb7f23fbd81a0b2ebcf12a4</password>
+      </wsUser>
+    </urn:login>
+  </env:Body>
+</env:Envelope>
+--- Response ---
+HTTP Status: 200
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=9CFC0D00A5CEE8C13D39AF9B420FB3CE; Path=/webservices
+Set-Cookie: LSCookie=7uHQo1YHA9WzMWT0ug0vQRXeT3varyRjR4DEvYdV+WnJW3EDGngQgXBa3f9TfZ0KO5meGBKgItFvG5DQVJ/I2jkBk0GWCU1g; Version=1
+Set-Cookie: LandslideAppCookie=2031124490.36895.0000; path=/
+Content-Type: text/xml;charset=UTF-8
+Transfer-Encoding: chunked
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Date: Sat, 10 Oct 2015 15:46:12 GMT
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ns2:loginResponse xmlns:ns2="http://www.landslide.com/webservices/SoapService">
+      <loginResponse>
+        <error>false</error>
+        <errorCode>0</errorCode>
+        <resultMsg>login done successfully</resultMsg>
+        <statusCode>0</statusCode>
+        <passwordExpired>false</passwordExpired>
+        <sessionId>9CFC0D00A5CEE8C13D39AF9B420FB3CE</sessionId>
+      </loginResponse>
+    </ns2:loginResponse>
+  </soap:Body>
+</soap:Envelope>
+---
+.
+
+Finished in 4.253053s, 0.2351 runs/s, 0.7054 assertions/s.
+
+1 runs, 3 assertions, 0 failures, 0 errors, 0 skips
+[11:46][jayprall@Jay-Pralls-MacBook-Pro:~/Code/j4y/landslider(mock-landslide)]$ 
+
