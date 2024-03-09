@@ -1,7 +1,6 @@
 # Landslider
-[![Build Status](https://travis-ci.org/j4y/landslider.png?branch=master)][travis]
 
-[travis]: https://travis-ci.org/j4y/landslider
+[![GitHub Actions Status](https://github.com/j4y/landslider/workflows/Test/badge.svg)](https://github.com/j4y/landslider/actions)
 
 A Ruby library for interacting with Landslide’s SOAP-based API
 
