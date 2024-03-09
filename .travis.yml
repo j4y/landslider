@@ -1,4 +1,2 @@
 language: ruby
 sudo: false
-rvm:
-  - 2.1.5
