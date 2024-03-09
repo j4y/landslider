@@ -9,22 +9,31 @@ on:
 permissions:
   contents: read
 
+# limit concurrency to work around a problem with the sessions
+concurrency:
+  group: jaytest-instance
+  cancel-in-progress: false
+
 jobs:
   test:
-
     runs-on: ubuntu-latest
+
+    # test with multiple versions of ruby, must include the version in .ruby-version
+    strategy:
+      matrix:
+        ruby-version: ['2.5.9', '2.7.8']
 
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install dependencies
-      # curb requires libcurl dev headers
+    - name: Install libcurl dev headers
+      # `curb` gem dependency
       run: sudo apt-get install libcurl4-openssl-dev
 
-    - name: Set up Ruby
+    - name: Set up Ruby ${{ matrix.ruby-version }}
       uses: ruby/setup-ruby@v1
-      # see .ruby-version
       with:
+        ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
     - name: Run tests
