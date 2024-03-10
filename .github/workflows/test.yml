@@ -18,9 +18,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    # test with multiple versions of ruby, must include the version in .ruby-version
     strategy:
+      # one at a time because concurrent runs invalidate each other
+      max-parallel: 1
       matrix:
+        # test with multiple versions of ruby, must include the version in .ruby-version
         ruby-version: ['2.5.9', '2.7.8']
 
     steps:
